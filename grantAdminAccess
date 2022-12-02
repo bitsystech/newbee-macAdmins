@@ -1,0 +1,15 @@
+#!/bin/sh 
+USERNAME=$1 
+sudo /usr/sbin/dseditgroup -o edit -a "$USERNAME" -t user admin 
+errcode=$? 
+if [ "$errcode" -ne 0 ]; 
+then 
+echo "" 
+echo "Failed with errorcode $errcode"  
+echo "" 
+exit 1 
+fi 
+
+# Just know that there are 10s of scripts to do this job in a more custom way
+# Like, make it admin for 10mins only.
+# Or just use some PAM tool for this job.
