@@ -1,0 +1,5 @@
+#!/bin/bash 
+
+sudo defaults write /Library/Preferences/com.apple.commerce.plist AutoUpdate -bool FALSE 
+
+exit 0 
