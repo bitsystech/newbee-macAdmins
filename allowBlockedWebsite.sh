@@ -1,0 +1,1 @@
+/usr/bin/sed -i "" '/127.0.0.1 www.facebook.com/d' /etc/hosts 

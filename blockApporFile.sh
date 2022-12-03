@@ -1,0 +1,1 @@
+chflags schg /Applications/WhatsApp.app   
