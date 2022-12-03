@@ -1,0 +1,18 @@
+
+# Display the list of users in the login window
+defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME false
+
+# Display the username and password dialog box in the login window
+defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME true
+
+# Hide Shutdown icon from the login window
+defaults write /Library/Preferences/com.apple.loginwindow ShutDownDisabled true
+
+# Hide Restart icon from the login window
+defaults write /Library/Preferences/com.apple.loginwindow RestartDisabled true
+
+# Hide Sleep icon from the login window
+defaults write /Library/Preferences/com.apple.loginwindow SleepDisabled true
+
+# Display a message in the login window
+defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "text" 

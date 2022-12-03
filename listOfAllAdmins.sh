@@ -1,0 +1,1 @@
+dscl . -read /Groups/admin GroupMembership 

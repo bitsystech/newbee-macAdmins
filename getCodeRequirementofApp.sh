@@ -1,0 +1,1 @@
+codesign -dr - /System/Applications/Time\ Machine.app 
