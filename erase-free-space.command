@@ -1,0 +1,1 @@
+diskutil secureErase freespace 4 /Volumes/Macintosh\ HD 
