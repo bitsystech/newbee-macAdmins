@@ -1,0 +1,27 @@
+Description: Downloads the latest version of Firefox Developer Edition and verifies its code signature.
+Identifier: com.github.autopkg.download.FirefoxDeveloperEdition
+MinimumVersion: '2.3'
+
+Input:
+  NAME: Firefox Developer Edition
+  RELEASE: devedition-latest-ssl
+  LOCALE: en-US
+
+Process:
+  - Processor: MozillaURLProvider
+    Arguments:
+      product_name: firefox
+      release: '%RELEASE%'
+      locale: '%LOCALE%'
+
+  - Processor: URLDownloader
+    Arguments:
+      filename: '%NAME%.dmg'
+
+  - Processor: EndOfCheckPhase
+
+  - Processor: CodeSignatureVerifier
+    Arguments:
+      comment: Use wildcard matching so it matches Firefox Developer Edition.app
+      input_path: '%pathname%/Firefox*.app'
+      requirement: anchor apple generic and certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "43AQ936H96"

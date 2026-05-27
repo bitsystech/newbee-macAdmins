@@ -1,0 +1,14 @@
+Description: Downloads the latest version of Firefox Developer Edition and creates an installer package.
+Identifier: com.github.autopkg.pkg.FirefoxDeveloperEdition
+ParentRecipe: com.github.autopkg.download.FirefoxDeveloperEdition
+MinimumVersion: '2.3'
+
+Input:
+  NAME: Firefox Developer Edition
+
+Process:
+  # AppPkgCreator automatically handles finding the .app inside the downloaded DMG,
+  # extracting its version and bundle ID, and building a standard Apple .pkg!
+  - Processor: AppPkgCreator
+    Arguments:
+      app_path: '%pathname%/Firefox*.app'
